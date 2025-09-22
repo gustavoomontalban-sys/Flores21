@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Para Ti – Te Amo</title>
+
+<!-- Fuente romántica -->
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+
+  margin: 0;
+
+  padding: 0;
+
+  background: #000;
+
+  color: #ffd700;
+
+  font-family: 'Great Vibes', cursive, sans-serif;
+
+  text-align: center;
+
+  overflow: hidden;
+
+}
+
+/* Título */
+
+.titulo {
+
+  margin-top: 40px;
+
+  font-size: 3em;
+
+  text-shadow: 0 0 25px #ffd700;
+
+}
+
+/* Corazón mejor definido */
+
+.corazon {
+
+  position: relative;
+
+  width: 160px;
+
+  height: 145px;
+
+  margin: 50px auto;
+
+  background: #e60026;
+
+  transform: rotate(-45deg);
+
+  animation: latir 1.5s infinite ease-in-out;
+
+}
+
+.corazon::before,
+
+.corazon::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+
+  height: 160px;
+
+  background: #e60026;
+
+  border-radius: 50%;
+
+}
+
+.corazon::before { top: -80px; left: 0; }
+
+.corazon::after  { top: 0;   left: 80px; }
+
+@keyframes latir {
+
+  0%,100% { transform: rotate(-45deg) scale(1); }
+
+  50%     { transform: rotate(-45deg) scale(1.1); }
+
+}
+
+.nav-button {
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background: linear-gradient(135deg, #2a0201, #8a0202);
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-button:active {
+      transform: scale(0.95);
+    }
+
+/* Fecha */
+
+.fecha {
+
+  margin-top: 35px;
+
+  font-size: 1.5em;
+
+  text-shadow: 0 0 10px #ffea70;
+
+}
+
+/* Estrellas */
+
+.estrella {
+
+  position: absolute;
+
+  width: 2px;
+
+  height: 2px;
+
+  background: #fff;
+
+  border-radius: 50%;
+
+  animation: twinkle 2.5s infinite ease-in-out;
+
+}
+
+@keyframes twinkle {
+
+  0%,100% { opacity: 0.2; }
+
+  50%     { opacity: 1; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div class="titulo">🌻 Para Ti Mi Less Preciosa– Te Amo 🌻</div>
+
+  <div class="corazon"></div>
+
+
+      <!-- Botón que manda a otra pantalla -->
+      <button class="nav-button" onclick="window.location.href='floress.html'">
+        Florecitas
+      </button>
+
+  <div class="fecha">21/9/25</div>
+
+  <script>
+
+    // Generar estrellas aleatorias
+
+    for (let i = 0; i < 80; i++) {
+
+      const star = document.createElement("div");
+
+      star.className = "estrella";
+
+      star.style.top = Math.random() * 100 + "%";
+
+      star.style.left = Math.random() * 100 + "%";
+
+      star.style.animationDelay = (Math.random() * 2.5) + "s";
+
+      document.body.appendChild(star);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

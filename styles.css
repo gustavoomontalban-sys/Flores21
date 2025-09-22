@@ -1,0 +1,90 @@
+:root {
+  --bg-color: #fffbe9;
+  --text-color: #6b4226;
+  --flower-color: #FFD700;
+  --flower-center: #ff8800;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-color);
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  text-align: center;
+  max-width: 900px;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: var(--text-color);
+  margin: 10px 0;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+.flower-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.flower {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+.petal {
+  width: 45px;
+  height: 90px;
+  background: var(--flower-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 100%;
+  opacity: 0;
+  animation: fadeInPetal 1s ease-in forwards;
+}
+
+.center {
+  width: 50px;
+  height: 50px;
+  background: var(--flower-center);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fadeInPetal {
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px) scale(1.05); }
+}
+
+.flower:hover {
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.3s ease;
+}
